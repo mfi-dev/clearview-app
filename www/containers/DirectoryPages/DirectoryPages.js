@@ -2,14 +2,17 @@ import React from 'react'
 import BackLink from '../../components/BackLink'
 import DirectoryPage from '../../containers/DirectoryPage'
 import DoctorListItem from '../../components/DoctorListItem'
+import NurseListItem from '../../components/NurseListItem'
 import HospitalListItem from '../../components/HospitalListItem'
 import PharmacyListItem from '../../components/PharmacyListItem'
 import HospitalDirectoryListItem from '../../components/HospitalDirectoryListItem'
 
-const API_ROOT = 'http://clearviewcancer.com:3000'
+const API_ROOT = 'http://localhost:27017'
 const API_URLS = {
   doctors: API_ROOT + '/doctors/',
   doctorsSearch: API_ROOT + '/doctors/search/',
+  nurses: API_ROOT + '/nurses/',
+  nursesSearch: API_ROOT + '/nurses/search/',
   hospitals: API_ROOT + '/hospitals/',
   hospitalsSearch: API_ROOT + '/hospitals/search/',
   pharmacies: API_ROOT + '/pharmacies/',
@@ -36,6 +39,31 @@ class DoctorDirectoryPage extends React.Component {
         getAllItemsUrl={API_URLS.doctors}
         searchItemsUrl={API_URLS.doctorsSearch}
         localStorageKey="doctors"
+      />
+    )
+  }
+}
+
+class NurseDirectoryPage extends React.Component {
+  itemRenderer (nurse, index, isAndroid) {
+    return (
+      <NurseListItem nurse={nurse} index={index} isAndroid={isAndroid} />
+    )
+  }
+  render () {
+    return (
+      <DirectoryPage
+        title="Advanced Practice Providers"
+        icon="a"
+        searchInstructions="Search by Name, Certification, or Practice"
+        itemType="Advanced Practice Provider"
+        itemTypePlural="Advanced Practice Providers"
+        itemRenderer={::this.itemRenderer}
+        itemHeight={150}
+        rowHeight={150}
+        getAllItemsUrl={API_URLS.nurses}
+        searchItemsUrl={API_URLS.nursesSearch}
+        localStorageKey="nurses"
       />
     )
   }
@@ -128,6 +156,7 @@ IndividualHospitalDirectoryPage.propTypes = {
 
 export {
   DoctorDirectoryPage,
+  NurseDirectoryPage,
   HospitalDirectoryPage,
   IndividualHospitalDirectoryPage,
   PharmacyDirectoryPage

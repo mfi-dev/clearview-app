@@ -19,6 +19,7 @@ class HomePage extends React.Component {
       marginBottom: menuItemMarginBottom,
       height: menuItemHeight
     }
+    const linkText = (title === 'Nurses') ? 'Advanced Practice Providers' : title
     return (
       <Link
         to={url}
@@ -27,23 +28,25 @@ class HomePage extends React.Component {
         <div className="Menu__LinkItem__Container" style={menuItemStyles}>
           <div className="Menu__LinkItem">
             <div aria-hidden="true" className={'Menu__LinkItem__Icon Menu__LinkItem__Icon--' + title}></div>
-            <div className="Menu__LinkItem__Title">{title}</div>
+            <div className="Menu__LinkItem__Title">{linkText}</div>
           </div>
         </div>
       </Link>
     )
   }
+
   render () {
     const pageHeight = document.documentElement.clientHeight - 50
     const doctorLink = this.renderLink('/doctors', 'Doctors')
-    const hospitalLink = this.renderLink('/hospitals', 'Hospitals')
+    const nurseLink = this.renderLink('/nurses', 'Nurses')
+    // const hospitalLink = this.renderLink('/hospitals', 'Hospitals')
     const pharmacyLink = this.renderLink('/pharmacies', 'Pharmacies')
     return (
       <div className="HomePage" style={{height: pageHeight}}>
         <Logo />
         <nav className="Menu">
           {doctorLink}
-          {hospitalLink}
+          {nurseLink}
           {pharmacyLink}
         </nav>
       </div>

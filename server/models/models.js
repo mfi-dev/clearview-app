@@ -11,10 +11,28 @@ const DoctorSchema = new Mongoose.Schema({
   Specialty: String,
   Address: String,
   City: String,
+  State: String,
   Zip: String,
   County: String
 })
 const DoctorModel = db.model('Doctor', DoctorSchema)
+
+const NurseSchema = new Mongoose.Schema({
+  LastName: String,
+  FirstName: String,
+  FullName: String,
+  Certification: String,
+  PhoneNumber: String,
+  Type: String,
+  FaxNumber: String,
+  PracticeName: String,
+  Address: String,
+  City: String,
+  State: String,
+  Zip: String,
+  County: String
+})
+const NurseModel = db.model('Nurse', NurseSchema)
 
 const HospitalSchema = new Mongoose.Schema({
   Name: String,
@@ -39,6 +57,7 @@ const PharmacyModel = db.model('Pharmacy', PharmacySchema)
 
 export {
   DoctorModel,
+  NurseModel,
   HospitalModel,
   PharmacyModel
 }
