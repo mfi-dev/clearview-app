@@ -7,6 +7,7 @@ const PRIVATE_KEY = require('../credentials/google-service-account-key.json')
 const SPREADSHEET_ID = '1kZQbsrzJqKgtie-a5cXGWdO5_c7pjEYrMkw_OizUyac'
 const JSON_FILE_LOCATIONS = {
   'doctors': path.resolve(__dirname, '..', 'data/', 'doctors.json'),
+  'nurses': path.resolve(__dirname, '..', 'data/', 'nurses.json'),
   'pharmacies': path.resolve(__dirname, '..', 'data/', 'pharmacies.json'),
   'hospitals': path.resolve(__dirname, '..', 'data/', 'hospitals.json')
 }
@@ -42,6 +43,9 @@ async.series([
         switch (items.title) {
           case 'doctors':
             extractDoctorsFromSpreadsheet(items)
+            break
+          case 'nurses':
+            extractNursesFromSpreadsheet(items)
             break
           case 'pharmacies':
             extractPharmaciesFromSpreadsheet(items)
@@ -85,6 +89,31 @@ function extractDoctorsFromSpreadsheet (worksheet) {
         })
       }
     })).then(writeToFile('doctors', doctors))
+  })
+}
+
+function extractNursesFromSpreadsheet (worksheet) {
+  var nurses = []
+  worksheet.getRows({}, function (err, rows) {
+    if (err) console.log(err)
+    Promise.all(rows.map(function (row) {
+      if ((typeof row !== 'undefined') && (typeof row.firstname !== 'undefined')) {
+        nurses.push({
+          'LastName': row.lastname,
+          'FirstName': row.firstname,
+          'FullName': row.firstname + ' ' + row.lastname,
+          'PhoneNumber': row.phonenumber,
+          'Type': row.type,
+          'FaxNumber': row.faxnumber,
+          'PracticeName': row.practicename,
+          'Address': row.address,
+          'City': row.city,
+          'State': row.state,
+          'Zip': row.zip,
+          'County': row.county
+        })
+      }
+    })).then(writeToFile('nurses', nurses))
   })
 }
 

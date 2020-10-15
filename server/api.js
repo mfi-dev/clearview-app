@@ -5,7 +5,7 @@ import CORS from 'express-cors'
 import nodemailer from 'nodemailer'
 import {
   DoctorModel,
-  HospitalModel,
+  NurseModel,
   PharmacyModel
 } from './models'
 
@@ -68,27 +68,29 @@ Router.route('/doctors/search/:searchString')
     })
   })
 
-Router.route('/hospitals')
+Router.route('/nurses')
   .get(function (req, res) {
-    HospitalModel.find({}, null, { sort: { Name: 1 } }, function (err, data) {
+    NurseModel.find({}, null, { sort: { Name: 1 } }, function (err, data) {
       const response = (err)
-        ? {error: true, message: 'Error Loading Hospitals.'}
+        ? {error: true, message: 'Error Loading Advanced Practice Providers.'}
         : {error: false, message: data}
       res.json(response)
     })
   })
 
-Router.route('/hospitals/search/:searchString')
+Router.route('/nurses/search/:searchString')
     .get(function (req, res) {
       const searchString = decodeURIComponent(req.params.searchString)
-      HospitalModel.find({
+      NurseModel.find({
         $or: [
           { Name: { $regex: searchString, $options: 'i' } },
+          { Type: { $regex: searchString, $options: 'i' } },
+          { PracticeName: { $regex: searchString, $options: 'i'} },
           { City: { $regex: searchString, $options: 'i' } }
         ]
       }, null, { sort: { Name: 1 } }, function (err, data) {
         const response = (err)
-          ? { error: true, message: 'Server Error when querying hospitals collection.' }
+          ? { error: true, message: 'Server Error when querying Advanced Practice Provider collection.' }
           : { error: false, message: data }
         res.json(response)
       })

@@ -33,3 +33,4 @@ server/credentials/*
 !server/credentials/.gitkeep
 
 ./icon.png
+jsconfig.json
