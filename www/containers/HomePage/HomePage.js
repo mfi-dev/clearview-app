@@ -39,7 +39,6 @@ class HomePage extends React.Component {
     const pageHeight = document.documentElement.clientHeight - 50
     const doctorLink = this.renderLink('/doctors', 'Doctors')
     const nurseLink = this.renderLink('/nurses', 'Nurses')
-    // const hospitalLink = this.renderLink('/hospitals', 'Hospitals')
     const pharmacyLink = this.renderLink('/pharmacies', 'Pharmacies')
     return (
       <div className="HomePage" style={{height: pageHeight}}>

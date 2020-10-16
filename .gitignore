@@ -10,8 +10,6 @@ pids
 # build and dependencies
 node_modules
 build
-www/bundle.js
-
 .DS_Store
 
 # Cordova Structure
