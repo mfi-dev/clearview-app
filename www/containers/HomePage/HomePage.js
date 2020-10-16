@@ -3,7 +3,6 @@ import { Link } from 'react-router'
 import FastClick from 'fastclick'
 import Logo from '../../components/Logo'
 import './HomePage.styl'
-
 class HomePage extends React.Component {
 
   componentDidMount () {
@@ -27,7 +26,8 @@ class HomePage extends React.Component {
         activeClassName="Menu__Link--Active">
         <div className="Menu__LinkItem__Container" style={menuItemStyles}>
           <div className="Menu__LinkItem">
-            <div aria-hidden="true" className={'Menu__LinkItem__Icon Menu__LinkItem__Icon--' + title}></div>
+            <div aria-hidden="true" className={'Menu__LinkItem__Icon Menu__LinkItem__Icon--' + title}>
+            </div>
             <div className="Menu__LinkItem__Title">{linkText}</div>
           </div>
         </div>
