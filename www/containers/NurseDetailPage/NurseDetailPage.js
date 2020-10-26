@@ -3,6 +3,7 @@
 import React from 'react'
 import BackLink from '../../components/BackLink'
 import '../DoctorDetailPage/DoctorDetailPage.styl'
+import './NurseDetailPage.styl'
 
 class NurseDetailPage extends React.Component {
 
@@ -30,7 +31,7 @@ class NurseDetailPage extends React.Component {
       <div className={'Page ' + pageClass}>
         <header>
           <BackLink to="/nurses" text="Back" />
-          <div className="DoctorDetailPage__Icon"></div>
+          <div className="NurseDetailPage__Icon"></div>
           <h1>{title}</h1>
         </header>
         <main>

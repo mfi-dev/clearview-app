@@ -88,7 +88,7 @@ Router.route('/nurses/search/:searchString')
           { PracticeName: { $regex: searchString, $options: 'i'} },
           { City: { $regex: searchString, $options: 'i' } }
         ]
-      }, null, { sort: { Name: 1 } }, function (err, data) {
+      }, null, { sort: { LastName: 1, FirstName: 1 } }, function (err, data) {
         const response = (err)
           ? { error: true, message: 'Server Error when querying Advanced Practice Provider collection.' }
           : { error: false, message: data }
