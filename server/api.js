@@ -70,7 +70,7 @@ Router.route('/doctors/search/:searchString')
 
 Router.route('/nurses')
   .get(function (req, res) {
-    NurseModel.find({}, null, { sort: { Name: 1 } }, function (err, data) {
+    NurseModel.find({}, null, { sort: { LastName: 1, FirstName: 1 } }, function (err, data) {
       const response = (err)
         ? {error: true, message: 'Error Loading Advanced Practice Providers.'}
         : {error: false, message: data}
