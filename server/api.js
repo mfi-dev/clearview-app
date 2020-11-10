@@ -131,10 +131,10 @@ Router.route('/sendmail/:message')
     transporter.sendMail(email, function (err, info) {
       const response = (err)
         ? {error: true, message: 'Error. Please try again later.'}
-        : {error: false, message: 'Success!'};
+        : {error: false, message: 'Success!'}
       res.json(response);
-    });
-  });
+    })
+  })
 
 App.use('/', Router)
 App.listen(3000)

@@ -24,8 +24,8 @@ class NurseDetailPage extends React.Component {
 
     const smallPhone = (document.documentElement.clientHeight <= 480)
     const pageClass = (smallPhone)
-      ? 'DoctorDetailPage DoctorDetailPage--small'
-      : 'DoctorDetailPage'
+      ? 'DoctorDetailPage NurseDetailPage DoctorDetailPage--small NurseDetailPage--small'
+      : 'DoctorDetailPage NurseDetailPage'
 
     return (
       <div className={'Page ' + pageClass}>
