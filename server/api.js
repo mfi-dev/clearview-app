@@ -83,10 +83,9 @@ Router.route('/nurses/search/:searchString')
       const searchString = decodeURIComponent(req.params.searchString)
       NurseModel.find({
         $or: [
-          { Name: { $regex: searchString, $options: 'i' } },
+          { FullName: { $regex: searchString, $options: 'i' } },
           { Type: { $regex: searchString, $options: 'i' } },
-          { PracticeName: { $regex: searchString, $options: 'i'} },
-          { City: { $regex: searchString, $options: 'i' } }
+          { PracticeName: { $regex: searchString, $options: 'i'} }
         ]
       }, null, { sort: { LastName: 1, FirstName: 1 } }, function (err, data) {
         const response = (err)
