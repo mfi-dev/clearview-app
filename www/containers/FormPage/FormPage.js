@@ -4,7 +4,7 @@ import FooterNav from '../../components/FooterNav'
 import Axios from 'axios'
 import './FormPage.styl'
 
-const FORM_SUBMISSION_URL = 'http://clearviewcancer.com:3000/sendmail/'
+const FORM_SUBMISSION_URL = 'http://45.79.218.165:3000/sendmail/'
 
 class FormPage extends React.Component {
   constructor (props) {

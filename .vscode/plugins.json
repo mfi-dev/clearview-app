@@ -1,1 +1,1 @@
-{"plugins":["cordova-plugin-whitelist","cordova-plugin-legacy-whitelist","uk.co.workingedge.phonegap.plugin.launchnavigator"]}
+{"plugins":["cordova-plugin-whitelist","cordova-plugin-legacy-whitelist","uk.co.workingedge.phonegap.plugin.launchnavigator","cordova-plugin-actionsheet","cordova-plugin-dialogs"]}

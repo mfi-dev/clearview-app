@@ -26,6 +26,7 @@
     "babel-preset-stage-2": "^6.11.0",
     "body-parser": "^1.15.2",
     "compression": "^1.6.2",
+    "cordova-android": "^8.1.0",
     "cordova-ios": "^5.1.1",
     "es6-promise": "^3.2.1",
     "express": "^4.14.0",
@@ -85,7 +86,10 @@
     "plugins": {
       "cordova-plugin-whitelist": {},
       "cordova-plugin-legacy-whitelist": {},
-      "uk.co.workingedge.phonegap.plugin.launchnavigator": {}
+      "uk.co.workingedge.phonegap.plugin.launchnavigator": {
+        "GOOGLE_API_KEY_FOR_ANDROID": "AIzaSyCM-NL3dQSRNRy5EwEqFjydFtrOjQxJQic",
+        "OKHTTP_VERSION": "3.12.0"
+      }
     }
   }
 }

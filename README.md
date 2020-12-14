@@ -5,7 +5,7 @@
 - navigate to localhost:3000
 
 ### Run Server (production)
-- The API server is running on clearviewcancer.com (port 3000) via [pm2](http://pm2.keymetrics.io/) under the job 'api-server'
+- The API server is running on 45.79.218.165 (port 3000) via [pm2](http://pm2.keymetrics.io/) under the job 'api-server'
 - During development, server can be started locally via `npm run start`
 
 ### Import Data from [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1kZQbsrzJqKgtie-a5cXGWdO5_c7pjEYrMkw_OizUyac/edit?usp=sharing)

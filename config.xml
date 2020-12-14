@@ -12,24 +12,31 @@
     <preference name="SplashScreenDelay" value="2000" />
     <preference name="FadeSplashScreen" value="false"/>
     <preference name="orientation" value="portrait" />
+    <preference name="android-targetSdkVersion" value="29" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <plugin name="cordova-plugin-legacy-whitelist" spec="1" />
-    <plugin name="uk.co.workingedge.phonegap.plugin.launchnavigator" source="npm" />
-    <access origin="*" />
+    <plugin name="uk.co.workingedge.phonegap.plugin.launchnavigator" source="npm" >
+        <variable name="GOOGLE_API_KEY_FOR_ANDROID" value="AIzaSyCM-NL3dQSRNRy5EwEqFjydFtrOjQxJQic" />
+    </plugin>
+     <access origin="*" />
     <access origin="tel:*" launch-external="yes" />
     <access origin="telprompt:*" launch-external="yes" />
     <access origin="http://clearviewcancer.com:3000/*" />
     <access origin="https://clearviewcancer.com:3000/*" />
+    <access origin="http://45.79.218.165:3000/*" />
+    <access origin="https://45.79.218.165:3000/*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
     <allow-intent href="telprompt:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
-    <allow-navigation href="*://*.clearviewcancer.com:3000/*" />
+    <allow-navigation href="*://*.45.79.218.165:3000/*" />
+    <allow-navigation href="*://*:3000/*" />
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <preference name="android-targetSdkVersion" value="29" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
