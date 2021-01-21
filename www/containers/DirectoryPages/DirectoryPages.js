@@ -7,7 +7,7 @@ import HospitalListItem from '../../components/HospitalListItem'
 import PharmacyListItem from '../../components/PharmacyListItem'
 import HospitalDirectoryListItem from '../../components/HospitalDirectoryListItem'
 
-const API_ROOT = 'http://45.79.218.165:3000'
+const API_ROOT = 'http://app.clearviewcancer.com:3000'
 const API_URLS = {
   doctors: API_ROOT + '/doctors/',
   doctorsSearch: API_ROOT + '/doctors/search/',
